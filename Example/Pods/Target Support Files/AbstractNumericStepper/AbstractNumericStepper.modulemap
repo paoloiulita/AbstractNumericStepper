@@ -1,0 +1,6 @@
+framework module AbstractNumericStepper {
+  umbrella header "AbstractNumericStepper-umbrella.h"
+
+  export *
+  module * { export * }
+}
