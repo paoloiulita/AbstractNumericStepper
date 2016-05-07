@@ -48,6 +48,7 @@ public class AbstractNumericStepper: UIView {
 			decrement.enabled = value >= min
 			increment.enabled = value <= max
 			updateTextField()
+			delegate?.numericStepper(self, valueChanged: value)
 		}
 	}
 	public var min: Double = 0
