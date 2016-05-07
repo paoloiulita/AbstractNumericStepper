@@ -52,10 +52,16 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 			increment.enabled = value <= max
 			updateTextField()
 			delegate?.numericStepper(self, valueChanged: value)
+	public var min: Double = 0 {
+		didSet {
+			value = Swift.max(value, min)
 		}
 	}
-	public var min: Double = 0
-	public var max: Double = 10
+	public var max: Double = 10 {
+		didSet {
+			value = Swift.min(value, max)
+		}
+	}
 	public var step: Double = 1
 	public var canShowDecimalValues: Bool = false
 	public var currencySymbol: String = ""
