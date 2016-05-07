@@ -12,10 +12,22 @@ import AbstractNumericStepper
 class ViewController: UIViewController, AbstractNumericStepperDelegate {
 
 	@IBOutlet weak var firstNS: AbstractNumericStepper!
+	@IBOutlet weak var secondNS: AbstractNumericStepper!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         firstNS.delegate = self
+		firstNS.min = 2
+		firstNS.max = 7
+		firstNS.canShowDecimalValues = true
+		firstNS.step = 0.3
+		firstNS.tag = 1
+		
+		secondNS.delegate = self
+		secondNS.min = 100
+		secondNS.max = 1000
+		secondNS.step = 50
+		secondNS.tag = 2
     }
 
     override func didReceiveMemoryWarning() {
