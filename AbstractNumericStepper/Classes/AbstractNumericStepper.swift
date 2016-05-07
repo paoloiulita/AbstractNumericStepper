@@ -11,29 +11,19 @@ import UIKit
 
 protocol AbstractNumericStepperDelegate: NSObjectProtocol {
 	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double)
+	func numericStepper(numericStepper: AbstractNumericStepper, changedValidationStatus valid: Bool)
 }
 
-class AbstractNumericStepper: UIView {
+public class AbstractNumericStepper: UIView {
 	
 	// MARK: initializers
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		setupUI()
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		setupUI()
-	}
-	
+		
 	// MARK: outlets
 	
 	@IBOutlet weak var increment: UIButton!
 	@IBOutlet weak var decrement: UIButton!
 	@IBOutlet weak var background: UIView!
 	@IBOutlet weak var text: UITextField!
-	@IBOutlet weak var suffix: UILabel!
 	
 	// MARK: actions
 	
@@ -50,28 +40,36 @@ class AbstractNumericStepper: UIView {
 	var delegate: AbstractNumericStepperDelegate?
 	var value: Double = 0 {
 		didSet {
-			//value = min(value, max)
-			//decrement.enabled = value >= min
-			//increment.enabled = value <= max
+			if !canShowDecimalValues {
+				value = round(value)
+			}
+			value = Swift.min(value, max)
+			value = Swift.max(value, min)
+			decrement.enabled = value >= min
+			increment.enabled = value <= max
+			updateTextField()
 		}
 	}
 	var min: Double = 0
 	var max: Double = 10
 	var step: Double = 1
 	var canShowDecimalValues: Bool = false
-	var canDirectInputValues: Bool = false
-	var defaultBorderColor = UIColor.darkGrayColor()
-	var invalidBorderColor = UIColor.redColor()
-	var validBorderColor = UIColor.greenColor()
-	
-	// MARK: private properties
+	var currencySymbol: String = ""
 	
 	// MARK: methods
 	
+	// MARK: private properties
+	
+	private func updateTextField() {
+		var stringedValue = ""
+		if !canShowDecimalValues {
+			stringedValue = "\(Int(value))"
+		} else {
+			stringedValue = String(value)
+		}
+		text.text = "\(stringedValue) \(currencySymbol)"
+	}
+	
 	// MARK: private methods
 	
-	private func setupUI() {
-		// background.layer.borderColor = UIColor(rgba: defaultBorderColor).CGColor
-		background.layer.borderWidth = 1
-	}
 }
