@@ -14,6 +14,9 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 	@IBOutlet weak var firstNS: AbstractNumericStepper!
 	@IBOutlet weak var secondNS: AbstractNumericStepper!
 
+	@IBOutlet weak var firstLabel: UILabel!
+	@IBOutlet weak var secondLabel: UILabel!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -42,7 +45,11 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 	// MARK: AbstractNumericStepperDelegate
 	
 	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double) {
-		print(value)
+		if numericStepper.tag == 1 {
+			firstLabel.text = "\(numericStepper.value)"
+		} else if numericStepper.tag == 2 {
+			secondLabel.text = "\(numericStepper.value)"
+		}
 	}
 	
 }
