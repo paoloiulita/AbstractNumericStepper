@@ -78,8 +78,16 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 			}
 		}
 	}
-	
-	// MARK: methods
+	public var canDirectInputValues: Bool = true {
+		didSet {
+			if canDirectInputValues {
+				textField.delegate = self
+			} else {
+				textField.delegate = nil
+			}
+			textField.userInteractionEnabled = canDirectInputValues
+		}
+	}
 	
 	// MARK: private properties
 	
