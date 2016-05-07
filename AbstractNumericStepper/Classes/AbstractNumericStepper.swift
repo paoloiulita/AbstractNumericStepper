@@ -61,13 +61,13 @@ public class AbstractNumericStepper: UIView {
 	// MARK: private properties
 	
 	private func updateTextField() {
-		var stringedValue = ""
+		var valueToString = ""
 		if !canShowDecimalValues {
-			stringedValue = "\(Int(value))"
+			valueToString = "\(Int(value))"
 		} else {
-			stringedValue = String(value)
+			valueToString = String(value)
 		}
-		text.text = "\(stringedValue) \(currencySymbol)"
+		text.text = "\(valueToString) \(currencySymbol)"
 	}
 	
 	// MARK: private methods
