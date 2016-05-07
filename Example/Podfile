@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'AbstractNumericStepper_Example', :exclusive => true do
+  pod 'AbstractNumericStepper', :path => '../'
+end
+
+target 'AbstractNumericStepper_Tests', :exclusive => true do
+  pod 'AbstractNumericStepper', :path => '../'
+
+  pod 'Quick', '~> 0.8'
+  pod 'Nimble', '~> 3.0'
+  pod 'FBSnapshotTestCase'
+  pod 'Nimble-Snapshots'
+end
