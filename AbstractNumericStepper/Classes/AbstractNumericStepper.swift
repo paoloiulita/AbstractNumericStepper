@@ -19,8 +19,17 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	public override func awakeFromNib() {
 		textField.delegate = self
+		textField.keyboardType = .DecimalPad
+		let numberToolbar: UIToolbar = UIToolbar()
+		numberToolbar.barStyle = .Default
+		numberToolbar.items = [
+			UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: self, action: nil),
+			UIBarButtonItem(title: "Done", style: .Bordered, target: self, action: #selector(onDone))
+		]
+		numberToolbar.sizeToFit()
+		textField.inputAccessoryView = numberToolbar
 	}
-		
+	
 	// MARK: outlets
 	
 	@IBOutlet weak var increment: UIButton!
@@ -89,7 +98,7 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 		}
 	}
 	
-	// MARK: private properties
+	// MARK: private methods
 	
 	private func updateTextField() {
 		var valueToString = ""
@@ -103,13 +112,16 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 		} else {
 			textField.text = valueToString
 		}
-		
 	}
 	
 	private func updateValue() {
 		if let tValue = textField.text {
 			value = Double(tValue) ?? min
 		}
+	}
+	
+	@objc private func onDone() {
+		textField.resignFirstResponder()
 	}
 	
 	// MARK: UITextFieldDelegate
