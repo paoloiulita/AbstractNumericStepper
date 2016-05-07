@@ -41,9 +41,5 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 		print(value)
 	}
 	
-	func numericStepper(numericStepper: AbstractNumericStepper, changedValidationStatus valid: Bool) {
-		
-	}
-
 }
 

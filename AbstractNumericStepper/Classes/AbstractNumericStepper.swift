@@ -11,7 +11,6 @@ import UIKit
 
 public protocol AbstractNumericStepperDelegate: NSObjectProtocol {
 	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double)
-	func numericStepper(numericStepper: AbstractNumericStepper, changedValidationStatus valid: Bool)
 }
 
 public class AbstractNumericStepper: UIView, UITextFieldDelegate {
