@@ -16,6 +16,7 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         firstNS.delegate = self
 		firstNS.min = 2
 		firstNS.max = 7
@@ -29,6 +30,8 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 		secondNS.step = 50
 		secondNS.currencySymbol = "€"
 		secondNS.tag = 2
+		secondNS.canShowDecimalValues = false
+		secondNS.canDirectInputValues = false
     }
 
     override func didReceiveMemoryWarning() {
