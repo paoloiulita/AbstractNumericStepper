@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstNS" customModule="AbstractNumericStepper_Example" customModuleProvider="target">
             <connections>
-                <outlet property="background" destination="6Uj-gD-twd" id="zgI-Pe-2Oz"/>
                 <outlet property="decrement" destination="Llx-JG-iin" id="UO7-Dk-aY4"/>
                 <outlet property="increment" destination="MsX-5l-rE8" id="413-6R-2lf"/>
                 <outlet property="textField" destination="SAa-E5-qia" id="hE4-bx-U7f"/>

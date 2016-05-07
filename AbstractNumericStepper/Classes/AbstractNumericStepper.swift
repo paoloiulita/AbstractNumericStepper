@@ -26,7 +26,6 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	@IBOutlet weak var increment: UIButton!
 	@IBOutlet weak var decrement: UIButton!
-	@IBOutlet weak var background: UIView!
 	@IBOutlet weak var textField: UITextField!
 	
 	// MARK: actions
