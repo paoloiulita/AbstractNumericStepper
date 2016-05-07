@@ -17,21 +17,45 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReN-1Z-CIk">
-                    <rect key="frame" x="61" y="0.0" width="39" height="27"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReN-1Z-CIk">
+                    <rect key="frame" x="61" y="0.0" width="39" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="4IN-SN-97j"/>
+                        <constraint firstAttribute="width" constant="39" id="uy1-tF-Qvp"/>
+                    </constraints>
                     <state key="normal" image="icon-arrow-up"/>
+                    <connections>
+                        <action selector="onIncrement:" destination="-1" eventType="touchUpInside" id="i3d-a5-gGo"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JT-KJ-3qk">
-                    <rect key="frame" x="61" y="23" width="39" height="27"/>
-                    <state key="normal" image="icon-arrow-down"/>
-                </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pNK-QY-jkm">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pNK-QY-jkm">
                     <rect key="frame" x="8" y="10" width="53" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JT-KJ-3qk">
+                    <rect key="frame" x="61" y="25" width="39" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="3DB-6i-oqS"/>
+                        <constraint firstAttribute="width" constant="39" id="EB2-W7-TK7"/>
+                    </constraints>
+                    <state key="normal" image="icon-arrow-down"/>
+                    <connections>
+                        <action selector="onDecrement:" destination="-1" eventType="touchUpInside" id="uF8-0V-ed6"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ReN-1Z-CIk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1CT-yI-1qz"/>
+                <constraint firstAttribute="bottom" secondItem="pNK-QY-jkm" secondAttribute="bottom" constant="10" id="4j4-aS-7lE"/>
+                <constraint firstItem="pNK-QY-jkm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="C4c-od-AQc"/>
+                <constraint firstAttribute="trailing" secondItem="6JT-KJ-3qk" secondAttribute="trailing" id="GnA-K9-hgh"/>
+                <constraint firstItem="pNK-QY-jkm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Td4-7m-cIC"/>
+                <constraint firstAttribute="trailing" secondItem="ReN-1Z-CIk" secondAttribute="trailing" id="hsk-hO-UOn"/>
+                <constraint firstAttribute="bottom" secondItem="6JT-KJ-3qk" secondAttribute="bottom" id="td8-mh-8T1"/>
+                <constraint firstItem="6JT-KJ-3qk" firstAttribute="leading" secondItem="pNK-QY-jkm" secondAttribute="trailing" id="zhM-Af-uTV"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="63" y="588"/>

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,28 +18,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-QM-26R" customClass="FirstNS" customModule="AbstractNumericStepper_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-QM-26R" customClass="FirstNS" customModule="AbstractNumericStepper_Example" customModuleProvider="target">
                                 <rect key="frame" x="37" y="126" width="300" height="55"/>
                                 <color key="backgroundColor" red="0.1450980392" green="0.53725490200000003" blue="0.84038254310000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Gbk-AE-xxb"/>
+                                    <constraint firstAttribute="width" constant="300" id="yib-Aj-bYN"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-rt-QqQ" customClass="SecondNS" customModule="AbstractNumericStepper_Example" customModuleProvider="target">
-                                <rect key="frame" x="137" y="215" width="100" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-rt-QqQ" customClass="SecondNS" customModule="AbstractNumericStepper_Example" customModuleProvider="target">
+                                <rect key="frame" x="122" y="215" width="130" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="S54-DA-QYH"/>
+                                    <constraint firstAttribute="width" constant="130" id="gbj-J8-Zig"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AbstractNumericStepper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vq-az-75w">
-                                <rect key="frame" x="20" y="28" width="335" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AbstractNumericStepper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vq-az-75w">
+                                <rect key="frame" x="16" y="28" width="343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="jdA-Tq-VVF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="usage example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-P7-G2J">
-                                <rect key="frame" x="20" y="64" width="335" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usage example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-P7-G2J">
+                                <rect key="frame" x="16" y="64" width="343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="M6V-hK-c6j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Po7-rt-QqQ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="6jA-bX-IeX"/>
+                            <constraint firstItem="LL9-QM-26R" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="J21-Fh-vRE"/>
+                            <constraint firstItem="LL9-QM-26R" firstAttribute="top" secondItem="6lC-P7-G2J" secondAttribute="bottom" constant="28" id="K7y-5m-M4g"/>
+                            <constraint firstItem="6vq-az-75w" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="W7k-VN-PHA"/>
+                            <constraint firstItem="Po7-rt-QqQ" firstAttribute="top" secondItem="LL9-QM-26R" secondAttribute="bottom" constant="34" id="XBS-sA-Ggy"/>
+                            <constraint firstItem="6vq-az-75w" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="XkI-2J-hO8"/>
+                            <constraint firstItem="6lC-P7-G2J" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ZK8-2z-4D1"/>
+                            <constraint firstItem="6lC-P7-G2J" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="dpS-Gl-tYB"/>
+                            <constraint firstItem="6vq-az-75w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="rGP-IS-R6B"/>
+                            <constraint firstItem="6lC-P7-G2J" firstAttribute="top" secondItem="6vq-az-75w" secondAttribute="bottom" constant="2" id="vzv-2S-vd3"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

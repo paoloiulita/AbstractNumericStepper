@@ -17,9 +17,12 @@
             <rect key="frame" x="0.0" y="0.0" width="228" height="55"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Llx-JG-iin">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Llx-JG-iin">
                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                     <color key="backgroundColor" red="0.29247496579999999" green="0.66971549909999994" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="eIB-4t-TUp"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="-">
                         <color key="titleColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,18 +31,25 @@
                         <action selector="onDecrement:" destination="-1" eventType="touchUpInside" id="5B3-be-aW9"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Uj-gD-twd">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Uj-gD-twd">
                     <rect key="frame" x="60" y="0.0" width="108" height="55"/>
                     <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAa-E5-qia">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAa-E5-qia">
                     <rect key="frame" x="79" y="16" width="70" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="BC5-gJ-YyG"/>
+                        <constraint firstAttribute="height" constant="24" id="ZzB-zH-DgX"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsX-5l-rE8">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsX-5l-rE8">
                     <rect key="frame" x="173" y="0.0" width="55" height="55"/>
                     <color key="backgroundColor" red="0.29247496579999999" green="0.66971549909999994" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="lG3-s7-CwU"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="+">
                         <color key="titleColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,6 +60,20 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6Uj-gD-twd" secondAttribute="bottom" id="8mp-No-qCG"/>
+                <constraint firstItem="MsX-5l-rE8" firstAttribute="leading" secondItem="6Uj-gD-twd" secondAttribute="trailing" constant="5" id="Bzm-Lz-Ebc"/>
+                <constraint firstItem="SAa-E5-qia" firstAttribute="centerX" secondItem="6Uj-gD-twd" secondAttribute="centerX" id="HFO-Tw-OZN"/>
+                <constraint firstItem="Llx-JG-iin" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OnH-2f-5Y8"/>
+                <constraint firstItem="6Uj-gD-twd" firstAttribute="leading" secondItem="Llx-JG-iin" secondAttribute="trailing" constant="5" id="TfO-82-PbN"/>
+                <constraint firstAttribute="bottom" secondItem="MsX-5l-rE8" secondAttribute="bottom" id="WN6-Bk-7yQ"/>
+                <constraint firstItem="SAa-E5-qia" firstAttribute="centerY" secondItem="6Uj-gD-twd" secondAttribute="centerY" id="d34-dH-N7Y"/>
+                <constraint firstAttribute="bottom" secondItem="Llx-JG-iin" secondAttribute="bottom" id="fry-9F-gAv"/>
+                <constraint firstItem="6Uj-gD-twd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l5r-AL-8tr"/>
+                <constraint firstItem="MsX-5l-rE8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uTu-AE-Znb"/>
+                <constraint firstAttribute="trailing" secondItem="MsX-5l-rE8" secondAttribute="trailing" id="xlY-Ws-ev1"/>
+                <constraint firstItem="Llx-JG-iin" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zap-2G-aNG"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="115" y="133.5"/>
