@@ -51,7 +51,11 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 			decrement.enabled = value >= min
 			increment.enabled = value <= max
 			updateTextField()
-			delegate?.numericStepper(self, valueChanged: value)
+			if value != oldValue {
+				delegate?.numericStepper(self, valueChanged: value)	
+			}
+		}
+	}
 	public var min: Double = 0 {
 		didSet {
 			value = Swift.max(value, min)
