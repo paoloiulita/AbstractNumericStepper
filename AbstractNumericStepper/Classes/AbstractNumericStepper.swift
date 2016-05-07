@@ -14,16 +14,20 @@ public protocol AbstractNumericStepperDelegate: NSObjectProtocol {
 	func numericStepper(numericStepper: AbstractNumericStepper, changedValidationStatus valid: Bool)
 }
 
-public class AbstractNumericStepper: UIView {
+public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	// MARK: initializers
+	
+	public override func awakeFromNib() {
+		textField.delegate = self
+	}
 		
 	// MARK: outlets
 	
 	@IBOutlet weak var increment: UIButton!
 	@IBOutlet weak var decrement: UIButton!
 	@IBOutlet weak var background: UIView!
-	@IBOutlet weak var text: UITextField!
+	@IBOutlet weak var textField: UITextField!
 	
 	// MARK: actions
 	
@@ -68,9 +72,20 @@ public class AbstractNumericStepper: UIView {
 		} else {
 			valueToString = String(value)
 		}
-		text.text = "\(valueToString) \(currencySymbol)"
+		textField.text = "\(valueToString) \(currencySymbol)"
 	}
 	
 	// MARK: private methods
+	
+	// MARK: UITextFieldDelegate
+	
+	public func textFieldDidEndEditing(textField: UITextField) {
+		print(textField.text)
+	}
+	
+	public func textFieldShouldReturn(textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
+	}
 	
 }

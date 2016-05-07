@@ -10,7 +10,7 @@
                 <outlet property="background" destination="6Uj-gD-twd" id="zgI-Pe-2Oz"/>
                 <outlet property="decrement" destination="Llx-JG-iin" id="UO7-Dk-aY4"/>
                 <outlet property="increment" destination="MsX-5l-rE8" id="413-6R-2lf"/>
-                <outlet property="text" destination="SAa-E5-qia" id="IPd-Xe-vnc"/>
+                <outlet property="textField" destination="SAa-E5-qia" id="hE4-bx-U7f"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
