@@ -98,7 +98,12 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 		} else {
 			valueToString = String(value)
 		}
-		textField.text = "\(valueToString) \(currencySymbol)"
+		if currencySymbol != "" {
+			textField.text = "\(valueToString) \(currencySymbol)"
+		} else {
+			textField.text = valueToString
+		}
+		
 	}
 	
 	private func updateValue() {
