@@ -101,12 +101,16 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 		textField.text = "\(valueToString) \(currencySymbol)"
 	}
 	
-	// MARK: private methods
+	private func updateValue() {
+		if let tValue = textField.text {
+			value = Double(tValue) ?? min
+		}
+	}
 	
 	// MARK: UITextFieldDelegate
 	
 	public func textFieldDidEndEditing(textField: UITextField) {
-		print(textField.text)
+		updateValue()
 	}
 	
 	public func textFieldShouldReturn(textField: UITextField) -> Bool {
