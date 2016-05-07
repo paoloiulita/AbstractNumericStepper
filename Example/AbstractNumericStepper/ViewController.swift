@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import AbstractNumericStepper
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AbstractNumericStepperDelegate {
+
+	@IBOutlet weak var firstNS: AbstractNumericStepper!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        firstNS.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	// MARK: AbstractNumericStepperDelegate
+	
+	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double) {
+		print(value)
+	}
+	
+	func numericStepper(numericStepper: AbstractNumericStepper, changedValidationStatus valid: Bool) {
+		
+	}
 
 }
 
