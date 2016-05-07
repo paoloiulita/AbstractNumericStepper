@@ -27,6 +27,7 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 		secondNS.min = 100
 		secondNS.max = 1000
 		secondNS.step = 50
+		secondNS.currencySymbol = "€"
 		secondNS.tag = 2
     }
 

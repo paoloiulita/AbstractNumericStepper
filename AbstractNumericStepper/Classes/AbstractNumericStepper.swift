@@ -66,8 +66,18 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 		}
 	}
 	public var step: Double = 1
-	public var canShowDecimalValues: Bool = false
-	public var currencySymbol: String = ""
+	public var canShowDecimalValues: Bool = false {
+		didSet {
+			updateTextField()
+		}
+	}
+	public var currencySymbol: String = "" {
+		didSet {
+			if currencySymbol != "" {
+				updateTextField()
+			}
+		}
+	}
 	
 	// MARK: methods
 	
