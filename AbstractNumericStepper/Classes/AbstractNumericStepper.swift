@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol AbstractNumericStepperDelegate: NSObjectProtocol {
+public protocol AbstractNumericStepperDelegate: NSObjectProtocol {
 	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double)
 	func numericStepper(numericStepper: AbstractNumericStepper, changedValidationStatus valid: Bool)
 }
@@ -37,8 +37,8 @@ public class AbstractNumericStepper: UIView {
 	
 	// MARK: properties
 	
-	var delegate: AbstractNumericStepperDelegate?
-	var value: Double = 0 {
+	public var delegate: AbstractNumericStepperDelegate?
+	public var value: Double = 0 {
 		didSet {
 			if !canShowDecimalValues {
 				value = round(value)
@@ -50,11 +50,11 @@ public class AbstractNumericStepper: UIView {
 			updateTextField()
 		}
 	}
-	var min: Double = 0
-	var max: Double = 10
-	var step: Double = 1
-	var canShowDecimalValues: Bool = false
-	var currencySymbol: String = ""
+	public var min: Double = 0
+	public var max: Double = 10
+	public var step: Double = 1
+	public var canShowDecimalValues: Bool = false
+	public var currencySymbol: String = ""
 	
 	// MARK: methods
 	
