@@ -51,8 +51,17 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	public var delegate: AbstractNumericStepperDelegate?
 	public var value: Double = 0 {
 		didSet {
+			let isInt = floor(value) == value
 			if !canShowDecimalValues {
 				value = round(value)
+			} else if shouldRoundToHalfDecimal && !isInt {
+				var fValue: Double = floor(value)
+				if (value - fValue) > 0.5 {
+					fValue += 1
+				} else {
+					fValue += 0.5
+				}
+				value = fValue
 			}
 			value = Swift.min(value, max)
 			value = Swift.max(value, min)
@@ -87,6 +96,7 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 			}
 		}
 	}
+	public var shouldRoundToHalfDecimal: Bool = false
 	public var canDirectInputValues: Bool = true {
 		didSet {
 			if canDirectInputValues {

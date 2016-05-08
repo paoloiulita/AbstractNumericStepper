@@ -24,6 +24,7 @@ class ViewController: UIViewController, AbstractNumericStepperDelegate {
 		firstNS.min = 2
 		firstNS.max = 7
 		firstNS.canShowDecimalValues = true
+		firstNS.shouldRoundToHalfDecimal = true
 		firstNS.step = 0.3
 		firstNS.tag = 1
 		
