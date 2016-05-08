@@ -24,7 +24,7 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 		numberToolbar.barStyle = .Default
 		numberToolbar.items = [
 			UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: self, action: nil),
-			UIBarButtonItem(title: "Done", style: .Bordered, target: self, action: #selector(onDone))
+			UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(onDone))
 		]
 		numberToolbar.sizeToFit()
 		textField.inputAccessoryView = numberToolbar
