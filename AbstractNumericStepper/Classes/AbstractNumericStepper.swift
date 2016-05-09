@@ -10,9 +10,17 @@ import Foundation
 import UIKit
 
 public protocol AbstractNumericStepperDelegate: NSObjectProtocol {
+	/**
+	Invoked on each update of value
+	
+	- Parameters:
+	- numericStepper: The actual component which is changing
+	- valueChanged: the new value
+	*/
 	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double)
 }
 
+/// Contains methods for easily creating a numeric stepper
 public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	// MARK: initializers
@@ -38,17 +46,30 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	// MARK: actions
 	
+	/**
+		change the model by adding a defined step value
+		
+		- Parameter sender: The UIButton invoking
+	*/
 	@IBAction func onIncrement(sender: UIButton) {
 		value += step
 	}
 	
+	/**
+		change the model by subtracting a defined step value
+	
+		- Parameter sender: The UIButton invoking
+	*/
 	@IBAction func onDecrement(sender: UIButton) {
 		value -= step
 	}
 	
 	// MARK: properties
 	
+	/// The object implementing the method called when value changes
 	public var delegate: AbstractNumericStepperDelegate?
+	
+	/// The actual value of the numeric stepper
 	public var value: Double = 0 {
 		didSet {
 			let isInt = floor(value) == value
@@ -73,22 +94,32 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 			}
 		}
 	}
+	
+	/// The minimum value allowed to be set
 	public var min: Double = 0 {
 		didSet {
 			value = Swift.max(value, min)
 		}
 	}
+	
+	/// The maximum value allowed to be set
 	public var max: Double = 10 {
 		didSet {
 			value = Swift.min(value, max)
 		}
 	}
+	
+	/// The quantity to be added or subtracted on each button press
 	public var step: Double = 1
+	
+	/// Defines if the numeric stepper should or not show only integers
 	public var canShowDecimalValues: Bool = false {
 		didSet {
 			updateTextField()
 		}
 	}
+	
+	/// The symbol that can be placed after the value
 	public var currencySymbol: String = "" {
 		didSet {
 			if currencySymbol != "" {
@@ -96,7 +127,11 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 			}
 		}
 	}
+	
+	/// Defines if the value should be rounded at the neares half decimal (0.5) point
 	public var shouldRoundToHalfDecimal: Bool = false
+	
+	/// Defines if the UITextField shoul be interactive
 	public var canDirectInputValues: Bool = true {
 		didSet {
 			if canDirectInputValues {
