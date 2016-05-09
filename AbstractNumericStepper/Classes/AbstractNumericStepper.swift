@@ -136,11 +136,11 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	// MARK: UITextFieldDelegate
 	
-	public func textFieldDidEndEditing(textField: UITextField) {
+	private func textFieldDidEndEditing(textField: UITextField) {
 		updateValue()
 	}
 	
-	public func textFieldShouldReturn(textField: UITextField) -> Bool {
+	private func textFieldShouldReturn(textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
 	}
