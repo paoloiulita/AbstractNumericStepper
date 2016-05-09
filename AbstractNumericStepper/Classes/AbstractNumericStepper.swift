@@ -9,14 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol AbstractNumericStepperDelegate: NSObjectProtocol {
-	/**
-	Invoked on each update of value
-	
-	- Parameters:
-	- numericStepper: The actual component which is changing
-	- valueChanged: the new value
-	*/
+@objc public protocol AbstractNumericStepperDelegate: NSObjectProtocol {
 	func numericStepper(numericStepper: AbstractNumericStepper, valueChanged value: Double)
 }
 
@@ -171,11 +164,11 @@ public class AbstractNumericStepper: UIView, UITextFieldDelegate {
 	
 	// MARK: UITextFieldDelegate
 	
-	private func textFieldDidEndEditing(textField: UITextField) {
+	public func textFieldDidEndEditing(textField: UITextField) {
 		updateValue()
 	}
 	
-	private func textFieldShouldReturn(textField: UITextField) -> Bool {
+	public func textFieldShouldReturn(textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
 	}
