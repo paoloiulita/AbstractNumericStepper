@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AbstractNumericStepper"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "Abstract class to extend useful to create numeric steppers using swift"
 
   s.description      = <<-DESC
